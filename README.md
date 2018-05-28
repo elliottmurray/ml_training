@@ -14,4 +14,13 @@ classn_classname
 ```
 where n is the class. With the volume mount above you will be changing the jupyter notebook (causing changes on the working tree) If you want to keep it you will have to do a commit on your own branch. Otherwise a git hard reset or clean should work.
 
+To run just the python repl you can:
+```
+docker run -it  -v `pwd`/classes:/opt/notebooks/classes  -p 8888:8888 dius_ml python
+```
+
+To run a file in the current directory:
+```
+docker run -it  -v `pwd`:/opt/notebooks/  -p 8888:8888 dius_ml python <file.python>
+```
 
